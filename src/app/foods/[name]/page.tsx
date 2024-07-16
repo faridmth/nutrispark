@@ -10,7 +10,7 @@ import Image from 'next/image';
 import minerals from '/public/minerals.png';
 import vitamins from '/public/vitamins.png';
 import calories from '/public/calories.png'
-const page = ({params}:{params:{name:string}}) => {
+const Page = ({params}:{params:{name:string}}) => {
 
     const router = useRouter()
     const COLORS = ['#f28a04', '#4f78ec', '#f8200d',"green",'#E04F23'];
@@ -107,8 +107,8 @@ const page = ({params}:{params:{name:string}}) => {
                                     <p className='ml-2'>
                                         vitamins : 
                                         {
-                                            data.vitamins.map((vitamin)=>{
-                                                return (<span className='ml-1'>{vitamin}</span>)
+                                            data.vitamins.map((vitamin,i)=>{
+                                                return (<span key={i} className='ml-1'>{vitamin}</span>)
                                             })
                                         }
                                     </p>
@@ -118,8 +118,8 @@ const page = ({params}:{params:{name:string}}) => {
                                     <p className='ml-2'>
                                         minerals : 
                                         {
-                                            data.minerals.map((miniral)=>{
-                                                return (<span className='ml-1'>{miniral}</span>)
+                                            data.minerals.map((miniral,i)=>{
+                                                return (<span key={i} className='ml-1'>{miniral}</span>)
                                             })
                                         }
                                     </p>
@@ -140,4 +140,4 @@ const page = ({params}:{params:{name:string}}) => {
   )
 }
 
-export default page
+export default Page
