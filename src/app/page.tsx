@@ -20,7 +20,7 @@ import {
 
 import { useRouter } from "next/navigation"
 
-export function Home() {
+const Home: React.FC = () =>  {
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [value, setValue] =useState("")
